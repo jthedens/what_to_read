@@ -1,0 +1,17 @@
+.btn-start {
+  color: white;
+  font-size: 20px;
+  background-color: #3f72af;
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  // opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-start:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  background-color: #3f5a79;
+}
