@@ -1,15 +1,7 @@
-.how-to-card {
-  text-align: center;
-}
-
-.how-to-card p {
-  margin-top: 15px;
-}
-
-.how-to {
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 30px;
 }
 
 // Smallest device
@@ -45,4 +37,40 @@
   .how-to {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+// ---------------------- How-to Card --------------------
+
+.how-to-card {
+  text-align: center;
+}
+
+.how-to-card p {
+  margin-top: 15px;
+}
+
+// ---------------------------- Book Card ----------------
+
+.book-card {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-card > img {
+  height: 170px;
+  width: 120px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.book-details .title {
+  font-weight: bold;
+}
+
+.book-details .author {
+  font-weight: lighter;
+  color: gray;
 }

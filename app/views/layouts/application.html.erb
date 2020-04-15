@@ -8,17 +8,25 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= favicon_link_tag 'rocket-book.png'%>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <%= render 'shared/flashes' %>
+    <% unless current_page?('pages#home') %>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
     <%= yield %>
-    <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
+<!--     <%= render 'shared/footer' %>
+ -->    <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
 

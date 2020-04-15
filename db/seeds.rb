@@ -15,3 +15,15 @@ Book.create(
 
 puts "Book created!"
 
+puts 'Creating 5 books...'
+5.times do |i|
+  book = Book.create!(
+    title: Faker::Book.title,
+    author: Faker::Book.author,
+    description: Faker::Quote.matz,
+    cover: 'https://source.unsplash.com/featured/?books',
+    year_of_publication: '1997'
+  )
+  puts "#{i + 1}. #{book.title}"
+end
+puts 'Finished!'

@@ -1,9 +1,18 @@
 <div class="container">
-  <h1>Need some inspiration?</h1>
-  <h2>Find books your friends love here</h2>
+  <div class="text-center mt-3">
+    <h1>Need some inspiration?</h1>
+    <h3>Find books your friends love</h2>
+  </div>
 
-  <% @books.each do |book| %>
-    <%= image_tag book.cover %>
-    <%= book.title %> by <%= book.author %>
-  <% end %>
+  <div class="cards mt-5">
+    <% @books.each do |book| %>
+    <div class="book-card">
+      <%= image_tag book.cover %>
+      <div class="book-details">
+        <p class="title"><%= book.title %></p>
+        <p class="author"><%= book.author %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

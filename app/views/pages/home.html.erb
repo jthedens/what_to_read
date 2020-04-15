@@ -6,17 +6,23 @@
         <br>
         <p>Find books recommended by your friends</p>
         <br>
-        <%= link_to "Let's get started", "#", class: "btn-start" %>
+        <% if user_signed_in? %>
+          <%= link_to "Let's get started", books_path , class: "btn-start" %>
+        <% else %>
+          <%= link_to "Let's get started", new_user_session_path , class: "btn-start" %>
+        <% end %>
       </div>
     </div>
   </div>
 </section>
 
 <section>
+  <div data-aos="fade-up">
+
   <div class="container my-5">
     <h1 class="text-center">How it works</h1>
     <br>
-    <div class="how-to">
+    <div class="cards">
      <div class="how-to-card">
         <i class="fas fa-book-open icon"></i>
         <p>Upload your books</p>
@@ -34,6 +40,8 @@
         <p>Get inspiration</p>
       </div>
     </div>
+  </div>
+
   </div>
 </section>
 
