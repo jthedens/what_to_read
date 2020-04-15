@@ -14,7 +14,7 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <% unless current_page?('pages#home') %>
+    <% unless request.path == root_path %>
       <%= render 'shared/navbar' %>
     <% end %>
 

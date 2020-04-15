@@ -15,3 +15,14 @@
   color: white;
   background-color: #3f5a79;
 }
+
+.btn-search{
+  transition: background 0.3s ease;
+  border: 0.5px solid white;
+}
+
+.btn-search:hover {
+  background: #385273;
+  color: white;
+  border-radius: 50%;
+}

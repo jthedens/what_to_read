@@ -1,8 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to books_path, class: "navbar-brand" do %>
-    <%= image_tag "rocket-book.png" %>
-    <% end %>
+  <div class="d-flex space-around align-items-center">
+    <%= link_to books_path, class: "navbar-brand" do %>
+      <%= image_tag "rocket-book.png" %>
+      <% end %>
 
+    <%= form_for :search, url: books_path, method: :get do |f| %>
+      <%= button_tag :submit , class: "btn-search" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      <%= f.text_field :title, class: "search-bar", placeholder: "Search books..."%>
+      <% end %>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,7 +29,7 @@
           <% if current_user.picture == nil %>
             <%= image_tag 'rocket-book.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-            <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
