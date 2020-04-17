@@ -26,8 +26,8 @@
           <%= link_to "Add Book", new_book_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <% if current_user.picture == nil %>
-            <%= image_tag 'rocket-book.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.picture.present? %>
+            <%= image_tag 'donald.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= cl_image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
